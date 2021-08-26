@@ -67,15 +67,15 @@ public class Test {
 			StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
 			List<Student> selAll2 = studentMapper.selAll1();
 			for (Student student : selAll2) {
-//				System.out.printOln(student);
+//				System.out.println(student);
 			}
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
 			/*使用注解查询关联 单个对象N+1方式)*/
 			StudentMapper studentMapper1 = sqlSession.getMapper(StudentMapper.class);
-			List<Student> selAll21 = studentMapper.selAll();
+			List<Student> selAll21 = studentMapper1.selAll();
 			for (Student student : selAll21) {
-//				System.out.println(student);
+				System.out.println(student);
 			}
 
 			sqlSession.commit();
